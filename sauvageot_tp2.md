@@ -85,7 +85,7 @@ Pour rappel, NOM est une variable global édité juste avant
 <code>PASSWORD_DB="coud"; </code><br>
 <code>passwordASaisir=""; </code><br>
 <code>read -p  "Saisissez votre mdp :  " -s passwordASaisir # -p </code> <br>
-<code>print avant -s = naffiche pas la saisie de user </code><br>
+<code># -p pour afficher du texte "" -s = naffiche pas la saisie de user </code><br>
 <code>if [ $passwordASaisir = $PASSWORD_DB ]; then </code><br>
 <code>       echo -e "\n C'esttttttttt biiien ! password accepted :) "</code> <br>
 <code>else </code><br>
