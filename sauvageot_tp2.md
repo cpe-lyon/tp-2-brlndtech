@@ -77,9 +77,10 @@ cd ~ <br>
 mkdir script <br>
 cd script <br>
 touch testpasswd.sh <br>
-nano testpasswd.sh
-chmod 777 testpasswd.sh
+nano testpasswd.sh <br>
+chmod 777 testpasswd.sh <br>
 </code>
+
 
 
 
