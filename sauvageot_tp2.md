@@ -72,12 +72,15 @@ Pour rappel, NOM est une variable global édité juste avant
 
 ### **Vous enregistrerez vos scripts dans un dossier script que vous créerez dans votre répertoire personnel. Tous les scripts sont bien entendu à tester. Ajoutez le chemin vers script à votre PATH de manière permanente** 
 
-<code> cd ~ <br>  mkdir script <br> cd script <br> touch testpasswd.sh <br>
+cd ~ <br> 
+mkdir script <br> 
+cd script <br> 
+touch testpasswd.sh <br>
 nano testpasswd.sh <br>
 chmod 700 testpasswd.sh <br>
-</code> <br>
+<br>
 
-<code> 
+
 #!/bin/bash <br>
 PASSWORD_DB="coud"; <br>
 passwordASaisir=""; <br>
@@ -87,7 +90,6 @@ if [ $passwordASaisir = $PASSWORD_DB ]; then <br>
 else <br>
         echo -e "\n wrong password" <br>
 fi <br>
-</code>
 
 
 
