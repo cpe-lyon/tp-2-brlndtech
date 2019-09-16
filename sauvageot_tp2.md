@@ -92,6 +92,16 @@ Pour rappel, NOM est une variable global édité juste avant
 <code>        echo -e "\n wrong password"</code> <br>
 <code>fi </code> <br>
 
+## Exercice 3. Expressions rationnelles
+
+## Exercice 4. Contrôle d’utilisateur
+## Exercice 5. Factoriel   
+## Exercice 6. Le juste prix
+## Exercice 7. Statistiques
+## Exercice 8. Pour les plus rapides
+
+
+
 
 
 
