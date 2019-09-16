@@ -1,5 +1,7 @@
 # Compte rendu TP2  <img src="https://image.flaticon.com/icons/svg/518/518713.svg" height="50" alt="Zozor" /> | Geoffrey Sauvageot-Berland 
 
+## Exercice 1 
+
 ### **1. Dans quels dossiers bash trouve-t-il les commandes tapées par l’utilisateur ?**
 
 <code> printenv PATH </code>
@@ -46,6 +48,28 @@ La variable MY_VAR n'éxiste plus, car elle à été "éffacée". La commande ba
 <code> export MY_VAR="coudcoud" <br> bash  <br> echo $MY_VAR ; <br> " coudcoud "</code> 
 
 le fait d'utiliser export MY_VAR (...) ne crée pas une variable LOCAL, mais une variable GLOBAL. Elle reste donc dans le shell de manière permanente 
+
+### **7.Créer la variable d’environnement NOMS ayant pour contenu vos noms de binômes séparés par un espace Afficher la valeur de NOMS pour vérifier que l’affectation est correcte**
+
+<code> export NOMS="geoffrey bezet" <br> printenv NOMS </code>
+
+### **8. Ecrivez une commande qui affiche ”Bonjour à vous deux, binôme1 binôme2 !” (où binôme1 et binôme2 sont vos deux noms) en utilisant la variable NOMS**
+
+<code> echo "bonjour a vosu deux, $NOMS" </code> 
+
+Pour rappel, NOM est une variable global édité juste avant 
+
+### **9. Quelle différence y a-t-il entre donner une valeur vide à une variable et l’utilisation de la commande unset ?** 
+
+<code> unset NOM <br> </code>
+-> la variable qui a une valeur vide est toujours utilisable alors que grâce à la commande unset -> permet d'enlever la variable d'environnement NOM crée en amont. (On ne  pourrat plus l'afficher vu qu'elle n'éxiste plus )
+
+### **10 Utilisez la commande echo pour écrire exactement la phrase : $HOME = chemin (où chemin est votre dossier personnel d’après bash)**
+
+<code> echo "$HOME = chemin (où chemin est votre dossier personnel d’après bash)" </code> 
+
+## Exercice 2 Programmation Bash
+
 
 
 
