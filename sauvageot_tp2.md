@@ -74,7 +74,19 @@ Pour rappel, NOM est une variable global édité juste avant
 
 <code> cd ~ <br>  mkdir script <br> cd script <br> touch testpasswd.sh <br>
 nano testpasswd.sh <br>
-chmod 777 testpasswd.sh <br>
+chmod 700 testpasswd.sh <br>
+</code> <br>
+
+<code> 
+#!/bin/bash <br>
+PASSWORD_DB="coud"; <br>
+passwordASaisir=""; <br>
+read -p  "Saisissez votre mdp :  " -s passwordASaisir # -p affiche un print avant -s = naffiche pas la saisie de user <br>
+if [ $passwordASaisir = $PASSWORD_DB ]; then <br>
+        echo -e "\n C'esttttttttt biiien ! password accepted :) " <br>
+else <br>
+        echo -e "\n wrong password" <br>
+fi <br>
 </code>
 
 
