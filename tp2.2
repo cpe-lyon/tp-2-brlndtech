@@ -1,0 +1,51 @@
+# Compte rendu TP2  <img src="https://image.flaticon.com/icons/svg/518/518713.svg" height="50" alt="Zozor" /> | Geoffrey Sauvageot-Berland 
+
+### **1. Dans quels dossiers bash trouve-t-il les commandes tapées par l’utilisateur ?**
+
+<code> printenv PATH </code>
+
+### **2. Quelle variable d’environnement permet à la commande cd tapée sans argument de vous ramener dans votre répertoire personnel ?**
+
+<code> printenv HOME</code> <br>
+<code> /home/brlndtech </code> <br>
+
+### **3. Explicitez le rôle des variables LANG, PWD, OLDPWD, SHELL et _.**
+
+<code> printenv LANG  : fr_FR.UTF-8 </code> <br> 
+<code> La variable d'environement LANG : La variable d'environnement « LANG » détermine la langue que les logiciels utilisent pour communiquer avec l'utilisateur </code> <br> <br>
+
+<code> printenv PWD </code> <br>
+<code> PWD : cette variable d'environement contient le chemin du répertoire courant. </code> <br> <br>
+
+<code> printenv OLDPWD </code> <br>
+<code> La variable d'envirronement $OLDPWD contient le chemin absolu vers le répertoire courant précédament visité </code><br>
+<br>
+
+<code> printenv SHELL : /bin/bash</code> <br>
+<code> la variable d'environnement SHELL permet d'afficher le chemin du programme /bin/bash </code>
+
+
+### **4. Créez une variable locale MY_VAR (le contenu n’a pas d’importance). Vérifiez que la variable existe**
+
+<code> MY_VAR=" je suis une variable local"; </code> <br>
+<code>
+    echo $MY_VAR ; <br>
+    "je suis une variable local" 
+</code> <br>
+
+### **5. Tapez ensuite la commande bash. Que fait-elle ? La variable MY_VAR existe-t-elle ? Expliquez. A la fin de cette question, tapez la commande exit pour revenir dans votre session initiale.**
+
+<code> bash </code> <br>
+<code> echo $MY_VAR (ne retourne rien)
+
+La variable MY_VAR n'éxiste plus, car elle à été "éffacée". La commande bash permet de relancer la consol du shell, et donc la variable local a été éliminé. 
+<code> 
+
+### **6. Transformez MY_VAR en une variable d’environnement et recommencez la question précédente. Expliquez**
+
+<code> export MY_VAR="coudcoud" <br> bash  <br> echo $MY_VAR ; <br> " coudcoud "</code> 
+
+le fait d'utiliser export MY_VAR (...) ne crée pas une variable LOCAL, mais une variable GLOBAL. Elle reste donc dans le shell de manière permanente 
+
+
+
