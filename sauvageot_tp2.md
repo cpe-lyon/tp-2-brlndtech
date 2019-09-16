@@ -115,9 +115,9 @@ fi
 is_number $1
 
 if [ $? -eq 0 ]; then
-        echo "Le nombre est réel"
+        echo "Le nombre est de type réel (double)"
 else
-        echo "Le nombre n'est pas réel"
+        echo "Le nombre n'est pas de type réel "
 fi 
 ```
 ## Exercice 4. Contrôle d’utilisateur 
@@ -126,18 +126,40 @@ fi
 ```
 #!/bin/bash
 if [ -z "$1" ]; then
-        echo "Utilisation : $0 nom_utilisateur"
+        echo "Utilisation : $0 user_name"
 else
         if [ $(id -u $1) ]; then
-                echo "L'utilisateur existe"
+                echo "the user exist !  "
         else
-                echo "L'utilisateur n'existe pas"
+                echo "the user does not exist ! "
         fi
 fi
 ```
 
 ## Exercice 5. Factoriel   
 ## Exercice 6. Le juste prix
+```
+
+#!/bin/sh
+nombreAleatoire=$((1 + RANDOM % 10))
+nombreASaisir="";
+rep="oui"
+#compteur=1;
+echo $nombreAleatoire;
+  read -p  "Saisissez un nombre entre 1 et 10 : "  nombreASaisir # -p affiche un
+  while [  $nombreASaisir != $nombreAleatoire ]
+  do              
+      #$compteur = $compteur + 1    
+      if [ $nombreASaisir > $nombreAleatoire ]; then  
+            echo -e "\n Trop grand !! "
+            read -p  "saisi à nouveau : "  nombreASaisir # -p affiche un
+      elif [ $nombreASaisir < $nombreAleatoire ]; then
+            echo -e "\nTrop petit !"
+            read -p  "saisi à nouveau : "  nombreASaisir # -p affiche un
+      fi
+  done
+echo "gagné !!! Le nombre était " $nombreAleatoire " trouvé en "$compteur" fois" 
+```
 ## Exercice 7. Statistiques
 ## Exercice 8. Pour les plus rapides
 
