@@ -72,26 +72,26 @@ Pour rappel, NOM est une variable global édité juste avant
 
 ### **Vous enregistrerez vos scripts dans un dossier script que vous créerez dans votre répertoire personnel. Tous les scripts sont bien entendu à tester. Ajoutez le chemin vers script à votre PATH de manière permanente** 
 ```
-<code> cd ~ </code> <br>
-<code>mkdir script </code> <br> 
-<code>cd script </code><br> 
-<code>touch testpasswd.sh </code><br>
-<code>nano testpasswd.sh </code><br>
-<code>chmod 700 testpasswd.sh </code><br>
+cd ~  <br>
+mkdir script  <br> 
+cd script <br> 
+touch testpasswd.sh <br>
+nano testpasswd.sh <br>
+chmod 700 testpasswd.sh <br>
 <br>
 ```
 
 ```
-</code>#!/bin/bash </code><br>
-<code>PASSWORD_DB="coud"; </code><br>
-<code>passwordASaisir=""; </code><br>
-<code>read -p  "Saisissez votre mdp :  " -s passwordASaisir # -p </code> <br>
-<code># -p pour afficher du texte "" -s = naffiche pas la saisie de user </code><br>
-<code>if [ $passwordASaisir = $PASSWORD_DB ]; then </code><br>
-<code>       echo -e "\n C'esttttttttt biiien ! password accepted :) "</code> <br>
-<code>else </code><br>
-<code>        echo -e "\n wrong password"</code> <br>
-<code>fi </code> <br>
+#!/bin/bash <br>
+PASSWORD_DB="coud"; <br>
+passwordASaisir=""; <br>
+read -p  "Saisissez votre mdp :  " -s passwordASaisir # -p  <br>
+# -p pour afficher du texte "" -s = naffiche pas la saisie de user <br>
+if [ $passwordASaisir = $PASSWORD_DB ]; then <br>
+       echo -e "\n C'esttttttttt biiien ! password accepted :) " <br>
+else <br>
+        echo -e "\n wrong password" <br>
+fi  <br>
 
 ```
 
@@ -137,6 +137,8 @@ fi
 ```
 
 ## Exercice 5. Factoriel   
+
+
 ## Exercice 6. Le juste prix
 ```
 
