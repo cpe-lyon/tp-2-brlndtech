@@ -71,7 +71,7 @@ Pour rappel, NOM est une variable global édité juste avant
 ## Exercice 2 Programmation Bash
 
 ### **Vous enregistrerez vos scripts dans un dossier script que vous créerez dans votre répertoire personnel. Tous les scripts sont bien entendu à tester. Ajoutez le chemin vers script à votre PATH de manière permanente** 
-
+```
 <code> cd ~ </code> <br>
 <code>mkdir script </code> <br> 
 <code>cd script </code><br> 
@@ -79,8 +79,9 @@ Pour rappel, NOM est une variable global édité juste avant
 <code>nano testpasswd.sh </code><br>
 <code>chmod 700 testpasswd.sh </code><br>
 <br>
+```
 
-
+```
 </code>#!/bin/bash </code><br>
 <code>PASSWORD_DB="coud"; </code><br>
 <code>passwordASaisir=""; </code><br>
@@ -92,9 +93,49 @@ Pour rappel, NOM est une variable global édité juste avant
 <code>        echo -e "\n wrong password"</code> <br>
 <code>fi </code> <br>
 
+```
+
+
 ## Exercice 3. Expressions rationnelles
 
-## Exercice 4. Contrôle d’utilisateur
+
+```
+#!/bin/bash
+
+function is_number()
+{
+re='^[+-]?[0-9]+([.][0-9]+)?$'
+if ! [[ $1 =~ $re ]] ; then
+        return 1
+else
+        return 0
+fi
+}
+
+is_number $1
+
+if [ $? -eq 0 ]; then
+        echo "Le nombre est réel"
+else
+        echo "Le nombre n'est pas réel"
+fi 
+```
+## Exercice 4. Contrôle d’utilisateur 
+### Écrivez un script qui vérifie l’existence d’un utilisateur dont le nom est donné en paramètre du script. Si le script est appelé sans nom d’utilisateur, il affiche le message : ”Utilisation : nom_du_script nom_utilisateur”, où nom_du_script est le nom de votre script récupéré automatiquement (si vous changez le nom de votre script, le message doit changer automatiquement) 
+
+```
+#!/bin/bash
+if [ -z "$1" ]; then
+        echo "Utilisation : $0 nom_utilisateur"
+else
+        if [ $(id -u $1) ]; then
+                echo "L'utilisateur existe"
+        else
+                echo "L'utilisateur n'existe pas"
+        fi
+fi
+```
+
 ## Exercice 5. Factoriel   
 ## Exercice 6. Le juste prix
 ## Exercice 7. Statistiques
