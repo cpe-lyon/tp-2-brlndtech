@@ -80,6 +80,7 @@ touch testpasswd.sh <br>
 nano testpasswd.sh <br>
 chmod 700 testpasswd.sh <br>
 <br>
+</code>
 
 
 #!/bin/bash <br>
