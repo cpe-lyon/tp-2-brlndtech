@@ -145,13 +145,10 @@ fi
 #!/bin/sh
 nombreAleatoire=$((1 + RANDOM % 10))
 nombreASaisir="";
-rep="oui"
-#compteur=1;
-echo $nombreAleatoire;
-  read -p  "Saisissez un nombre entre 1 et 10 : "  nombreASaisir # -p affiche un
+#echo $nombreAleatoire;
+  read -p  "Saisissez un nombre entre 1 et 10 : "  nombreASaisir # -p
   while [  $nombreASaisir != $nombreAleatoire ]
-  do              
-      #$compteur = $compteur + 1    
+  do                
       if [ $nombreASaisir > $nombreAleatoire ]; then  
             echo -e "\n Trop grand !! "
             read -p  "saisi à nouveau : "  nombreASaisir # -p affiche un
@@ -160,7 +157,7 @@ echo $nombreAleatoire;
             read -p  "saisi à nouveau : "  nombreASaisir # -p affiche un
       fi
   done
-echo "gagné !!! Le nombre était " $nombreAleatoire " trouvé en "$compteur" fois" 
+echo "gagné !!! Le nombre était " $nombreAleatoire 
 ```
 ## Exercice 7. Statistiques
 ## Exercice 8. Pour les plus rapides
