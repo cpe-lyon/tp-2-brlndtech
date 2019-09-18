@@ -137,6 +137,21 @@ fi
 ```
 
 ## Exercice 5. Factoriel   
+```
+#!/bin/sh
+# pour éxécuter ./pgm.sh <parametre int>
+fact() {
+        nombreParametre=$1
+        if [ $nombreParametre -eq 0 ]; then
+          echo 1
+        elif [ $nombreParametre -lt 0 ]; then
+          echo "Erreur Votre nom doit être > 0"
+        else
+                echo $(( nombreParametre * `fact $(( nombreParametre - 1 ))` ))
+        fi
+}
+echo "Resultat : $(fact $1)"
+```
 
 
 ## Exercice 6. Le juste prix
