@@ -72,26 +72,26 @@ Pour rappel, NOM est une variable global édité juste avant
 
 ### **Vous enregistrerez vos scripts dans un dossier script que vous créerez dans votre répertoire personnel. Tous les scripts sont bien entendu à tester. Ajoutez le chemin vers script à votre PATH de manière permanente** 
 ```
-cd ~  <br>
-mkdir script  <br> 
-cd script <br> 
-touch testpasswd.sh <br>
-nano testpasswd.sh <br>
-chmod 700 testpasswd.sh <br>
-<br>
+cd ~  
+mkdir script  
+cd script 
+touch testpasswd.sh 
+nano testpasswd.sh 
+chmod 700 testpasswd.sh 
+
 ```
 
 ```
-#!/bin/bash <br>
-PASSWORD_DB="coud"; <br>
-passwordASaisir=""; <br>
-read -p  "Saisissez votre mdp :  " -s passwordASaisir # -p  <br>
-# -p pour afficher du texte "" -s = naffiche pas la saisie de user <br>
-if [ $passwordASaisir = $PASSWORD_DB ]; then <br>
-       echo -e "\n C'esttttttttt biiien ! password accepted :) " <br>
-else <br>
-        echo -e "\n wrong password" <br>
-fi  <br>
+#!/bin/bash 
+defaultPassword="coud"; 
+passwordASaisir=""; 
+read -p  "Saisissez votre mdp :  " -s passwordASaisir # -p  
+# -p pour afficher du texte "" -s = naffiche pas la saisie de user 
+if [ $passwordASaisir = $defaultPassword ]; then 
+       echo -e "\n C'esttttttttt biiien ! password accepted :) " 
+else 
+        echo -e "\n wrong password" 
+fi  
 
 ```
 
@@ -101,24 +101,21 @@ fi  <br>
 
 ```
 #!/bin/bash
-
-function is_number()
+function is_number() # fonction qui permet de savoir si un nombre est de type réel ou non 
 {
-re='^[+-]?[0-9]+([.][0-9]+)?$'
-if ! [[ $1 =~ $re ]] ; then
-        return 1
-else
-        return 0
-fi
+  re='^[+-]?[0-9]+([.][0-9]+)?$'
+  if ! [[ $1 =~ $re ]] ; then
+          return 1
+  else
+          return 0
+  fi
 }
-
 is_number $1
-
-if [ $? -eq 0 ]; then
-        echo "Le nombre est de type réel (double)"
-else
-        echo "Le nombre n'est pas de type réel "
-fi 
+  if [ $? = 0 ]; then
+          echo "Le nombre est de type réel (double)"
+  else
+          echo "Le nombre n'est pas de type réel (Vous avez entré une char) "
+  fi 
 ```
 ## Exercice 4. Contrôle d’utilisateur 
 ### Écrivez un script qui vérifie l’existence d’un utilisateur dont le nom est donné en paramètre du script. Si le script est appelé sans nom d’utilisateur, il affiche le message : ”Utilisation : nom_du_script nom_utilisateur”, où nom_du_script est le nom de votre script récupéré automatiquement (si vous changez le nom de votre script, le message doit changer automatiquement) 
@@ -158,10 +155,10 @@ echo "Resultat : $(fact $1)"
 ```
 
 #!/bin/sh
-nombreAleatoire=$((1 + RANDOM % 10))
-nombreASaisir="";
+nombreAleatoire=$((1 + RANDOM % 1000))
+# nombreASaisir="";
 echo $nombreAleatoire;
-  read -p  "Saisissez un nombre entre 1 et 10 : "  nombreASaisir # -p
+  read -p  "Saisissez un nombre entre 1 et 1000 : "  nombreASaisir # -p
   while [  $nombreASaisir -ne $nombreAleatoire ]
   do                
       if [ $nombreASaisir -gt $nombreAleatoire ]; then  
@@ -172,7 +169,7 @@ echo $nombreAleatoire;
             read -p  "saisi à nouveau : "  nombreASaisir # -p affiche un
       fi
   done
-echo "gagné !!! Le nombre était " $nombreAleatoire 
+echo "gagné !!! Le nombre était : " $nombreAleatoire 
 ```
 ## Exercice 7. Statistiques
 ## Exercice 8. Pour les plus rapides
