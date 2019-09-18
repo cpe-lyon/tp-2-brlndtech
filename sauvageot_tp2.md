@@ -145,14 +145,14 @@ fi
 #!/bin/sh
 nombreAleatoire=$((1 + RANDOM % 10))
 nombreASaisir="";
-#echo $nombreAleatoire;
+echo $nombreAleatoire;
   read -p  "Saisissez un nombre entre 1 et 10 : "  nombreASaisir # -p
-  while [  $nombreASaisir != $nombreAleatoire ]
+  while [  $nombreASaisir -ne $nombreAleatoire ]
   do                
-      if [ $nombreASaisir > $nombreAleatoire ]; then  
+      if [ $nombreASaisir -gt $nombreAleatoire ]; then  
             echo -e "\n Trop grand !! "
             read -p  "saisi à nouveau : "  nombreASaisir # -p affiche un
-      elif [ $nombreASaisir < $nombreAleatoire ]; then
+      elif [ $nombreASaisir -lt $nombreAleatoire ]; then
             echo -e "\nTrop petit !"
             read -p  "saisi à nouveau : "  nombreASaisir # -p affiche un
       fi
