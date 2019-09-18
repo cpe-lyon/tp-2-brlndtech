@@ -172,7 +172,52 @@ echo $nombreAleatoire;
 echo "gagné !!! Le nombre était : " $nombreAleatoire 
 ```
 ## Exercice 7. Statistiques
-## Exercice 8. Pour les plus rapides
+
+```
+function is_number()
+{
+        re='^[+-]?[0-9]+([.][0-9]+)?$'
+        if ! [[ $1 =~ $re ]] ; then
+                return 1
+        else
+                return 0
+        fi
+}
+
+min=$1
+max=$1
+moy=$1
+somme=0
+while (("$#"));
+do
+        is_number $1
+        if [ $? = 0 ]; then
+                if [ $1 -lt -100 ] || [ $1 -gt 100 ]; then
+                        echo "$1 est un nb qui est < -100 > 100, (ne va pas"
+                else
+                        if [ $1 -gt $max ]; then
+                                max=$1
+                        fi
+
+                        if [ $1 -lt $min ]; then
+                                min=$1
+                        fi
+
+                        somme=$(($somme+$1))
+                        ((i++))
+                fi
+        else
+                echo "$1 !!! ce n'est pas un nombre"
+        fi
+        shift #!
+done
+moy=$(($somme/$i))
+
+echo "La moyenne =  $moy"
+echo "Le nombre max = $max"
+echo "Le nombre < =  $min"
+
+```
 
 
 
