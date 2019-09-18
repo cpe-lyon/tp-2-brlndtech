@@ -142,11 +142,11 @@ fi
 # pour éxécuter ./pgm.sh <parametre int>
 fact() {
         nombreParametre=$1
-        if [ $nombreParametre -eq 0 ]; then
+        if [ $nombreParametre -eq 0 ]; then # si nombreParametre est = 0
           echo 1
-        elif [ $nombreParametre -lt 0 ]; then
+        elif [ $nombreParametre -lt 0 ]; then # sinon si nombreParametre est < 0 
           echo "Erreur Votre nom doit être > 0"
-        else
+        else sinon si nombreParametre est > 0 
                 echo $(( nombreParametre * `fact $(( nombreParametre - 1 ))` ))
         fi
 }
