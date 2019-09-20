@@ -45,13 +45,21 @@ La variable MY_VAR n'éxiste plus, car elle à été "éffacée". La commande ba
 
 ### **6. Transformez MY_VAR en une variable d’environnement et recommencez la question précédente. Expliquez**
 
-<code> export MY_VAR="coudcoud" <br> bash  <br> echo $MY_VAR ; <br> " coudcoud "</code> 
+``` 
+export MY_VAR="coudcoud"
+bash
+echo $MY_VAR ;
+" coudcoud "
+``` 
 
 le fait d'utiliser export MY_VAR (...) ne crée pas une variable LOCAL, mais une variable GLOBAL. Elle reste donc dans le shell de manière permanente 
 
 ### **7.Créer la variable d’environnement NOMS ayant pour contenu vos noms de binômes séparés par un espace Afficher la valeur de NOMS pour vérifier que l’affectation est correcte**
 
-<code> export NOMS="geoffrey bezet" <br> printenv NOMS </code>
+``` bash
+export NOMS="geoffrey bezet" 
+printenv NOMS
+``` 
 
 ### **8. Ecrivez une commande qui affiche ”Bonjour à vous deux, binôme1 binôme2 !” (où binôme1 et binôme2 sont vos deux noms) en utilisant la variable NOMS**
 
